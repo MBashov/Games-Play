@@ -1,12 +1,21 @@
-import { useState } from 'react'
-import './App.css'
+import { Routes, Route } from 'react-router'
+
+import Header from "./components/Header"
+import Home from "./components/home/Home"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div id="box">
-      
+      <main id="main-content">
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+
+
+      </main>
+
     </div>
   )
 }
