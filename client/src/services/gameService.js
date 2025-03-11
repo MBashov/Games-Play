@@ -6,15 +6,19 @@ export default {
     async getAll() {
         const result = await request.get(baseUrl);
         const games = Object.values(result);
-        
+
         return games;
     },
     getOne(gameId) {
-       return request.get(`${baseUrl}/${gameId}`);
+        return request.get(`${baseUrl}/${gameId}`);
     },
 
     create(gameData) {
         return request.post(baseUrl, gameData);
+    },
+
+    edit(gameId, gameData) {
+        return request.put(`${baseUrl}/${gameId}`, { ...gameData, _id: gameId });
     },
 
     delete(gameId) {
