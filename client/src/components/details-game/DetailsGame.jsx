@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ShowComments from "../show-comments/ShowComments";
 import CreateComments from "../create-comments/CreateComments";
 
-export default function DetailsGame() {
+export default function DetailsGame({ email }) {
     const navigate = useNavigate();
     const { gameId } = useParams();
     const [game, setGame] = useState({});
@@ -49,7 +49,7 @@ export default function DetailsGame() {
                 </div>
             </div>
 
-            {<CreateComments />}
+            {<CreateComments email={email} />}
 
         </section>
     );

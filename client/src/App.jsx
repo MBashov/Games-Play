@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/games' element={<Catalog />} />
-          <Route path='/games/:gameId/details' element={<DetailsGame />} />
+          <Route path='/games/:gameId/details' element={<DetailsGame email={email} />} />
           <Route path='/games/:gameId/edit' element={<EditGame />} />
           <Route path='/games/create' element={<CreateGame />} />
           <Route path='/login' element={<Login onLogin={setEmailHandler} />} />
