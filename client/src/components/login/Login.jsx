@@ -1,7 +1,16 @@
-export default function Login() {
+import { Link } from "react-router";
+
+export default function Login({ onLogin }) {
+
+    const loginAction = (formData) => {
+        const email = formData.get('email');
+
+        onLogin(email);
+    }
+
     return (
         <section id="login-page" className="auth">
-            <form id="login">
+            <form action={loginAction} id="login">
 
                 <div className="container">
                     <div className="brand-logo"></div>
@@ -13,7 +22,7 @@ export default function Login() {
                     <input type="password" id="login-password" name="password" />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
-                        <span>If you don't have profile click <a href="#">here</a></span>
+                        <span>If you don't have profile click <Link to="/register">here</Link></span>
                     </p>
                 </div>
             </form>
