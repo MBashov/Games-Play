@@ -3,15 +3,22 @@ import gameService from "../../services/gameService";
 import { useEffect, useState } from "react";
 import ShowComments from "../show-comments/ShowComments";
 import CreateComments from "../create-comments/CreateComments";
+import commentService from "../../services/commentService";
 
 export default function DetailsGame({ email }) {
     const navigate = useNavigate();
     const { gameId } = useParams();
     const [game, setGame] = useState({});
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         gameService.getOne(gameId)
             .then(result => setGame(result));
+
+        commentService.getAll(gameId)
+            .then(result => setComments(result));
+
+
     }, [gameId]);
 
     const deleteGameHandler = async () => {
@@ -22,6 +29,11 @@ export default function DetailsGame({ email }) {
         await gameService.delete(gameId);
 
         navigate('/games');
+    }
+
+    const showCommentsHandler = (comment) => {
+
+        setComments(state => [...state, comment]);
     }
 
     return (
@@ -40,7 +52,7 @@ export default function DetailsGame({ email }) {
                     {game.summary}
                 </p>
 
-                {<ShowComments />}
+                {<ShowComments comments={comments} />}
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
                 <div className="buttons">
@@ -52,6 +64,7 @@ export default function DetailsGame({ email }) {
             {<CreateComments
                 email={email}
                 gameId={gameId}
+                onCreate={showCommentsHandler}
             />}
 
         </section>
