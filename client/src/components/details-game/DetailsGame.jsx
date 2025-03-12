@@ -12,7 +12,7 @@ export default function DetailsGame({ email }) {
     useEffect(() => {
         gameService.getOne(gameId)
             .then(result => setGame(result));
-    }, []);
+    }, [gameId]);
 
     const deleteGameHandler = async () => {
         const confirm = window.confirm(`Are you sure you want to delete ${game.title}`);
@@ -49,7 +49,10 @@ export default function DetailsGame({ email }) {
                 </div>
             </div>
 
-            {<CreateComments email={email} />}
+            {<CreateComments
+                email={email}
+                gameId={gameId}
+            />}
 
         </section>
     );
