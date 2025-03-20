@@ -12,10 +12,10 @@ import { useState } from 'react'
 
 function App() {
 
-    const [email, setEmail] = useState('');
+    const [authData, setAuthData] = useState({});
 
-    const setEmailHandler = (authData) => {
-        setEmail(authData.email);
+    const setEmailHandler = (data) => {
+        setAuthData(data);
     }
 
     return (
@@ -25,7 +25,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/games' element={<Catalog />} />
-                    <Route path='/games/:gameId/details' element={<DetailsGame email={email} />} />
+                    <Route path='/games/:gameId/details' element={<DetailsGame email={authData.email} />} />
                     <Route path='/games/:gameId/edit' element={<EditGame />} />
                     <Route path='/games/create' element={<CreateGame />} />
                     <Route path='/login' element={<Login onLogin={setEmailHandler} />} />
