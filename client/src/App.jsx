@@ -12,10 +12,10 @@ import { useState } from 'react'
 
 function App() {
 
-    const [email, setemail] = useState('');
+    const [email, setEmail] = useState('');
 
-    const setEmailHandler = (email) => {
-        setemail(email);
+    const setEmailHandler = (authData) => {
+        setEmail(authData.email);
     }
 
     return (
