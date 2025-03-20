@@ -8,13 +8,18 @@ const request = async (method, url, data, options = {}) => {
         options = {
             ...options,
             headers: {
-                'Content-Type': 'Application/json'
+                'Content-Type': 'Application/json',
+                ...options.headers,
             },
             body: JSON.stringify(data),
         }
     }
-
-    const responce = await fetch(url, options)
+    
+    const responce = await fetch(url, options);
+    if (responce.status === 204) {
+        return
+    }
+    
     const result = await responce.json();
 
     return result;

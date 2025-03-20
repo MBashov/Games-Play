@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route } from 'react-router'
 
 import { userContext } from './contexts/userContext'
@@ -10,7 +11,7 @@ import CreateGame from './components/create-game/CreateGame'
 import Catalog from './components/catalog/Catalog'
 import DetailsGame from './components/details-game/DetailsGame'
 import EditGame from './components/edit-game/EditGame'
-import { useState } from 'react'
+import Logout from './components/logout/Logout'
 
 function App() {
 
@@ -20,8 +21,12 @@ function App() {
         setAuthData(data);
     }
 
+    const userLogoutHandler = () => {
+        setAuthData({});
+    }
+
     return (
-        <userContext.Provider value={{ ...authData, userLoginHandler }}>
+        <userContext.Provider value={{ ...authData, userLoginHandler, userLogoutHandler }}>
             <div id="box">
                 <main id="main-content">
                     <Header />
@@ -33,6 +38,7 @@ function App() {
                         <Route path='/games/create' element={<CreateGame />} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/register' element={<Register />} />
+                        <Route path='/logout' element={<Logout />} />
                     </Routes>
                 </main>
             </div>

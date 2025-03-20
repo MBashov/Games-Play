@@ -13,7 +13,7 @@ export default function Register() {
         const { email, password, rePassword } = Object.fromEntries(formData);
 
         if (password !== rePassword) {
-            return console.log('Wrong password'); //TODO Add error handler
+            return console.log('Wrong password'); //TODO Add error handler  
         }
 
         const authData = await register(email, password);
