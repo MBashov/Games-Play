@@ -15,7 +15,7 @@ export default function Login({ onLogin }) {
 
         onLogin(authData);
 
-        navigate('/games');
+        // navigate('/games');
     }
 
     const [_, formAction, isPending] = useActionState(loginHandler, { email: '', password: '' })
