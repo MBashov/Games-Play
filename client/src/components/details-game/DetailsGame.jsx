@@ -31,9 +31,9 @@ export default function DetailsGame({ email }) {
         navigate('/games');
     }
 
-    const showCommentsHandler = (comment) => {
+    const showCommentsHandler = (newComment) => {
 
-        setComments(state => [...state, comment]);
+        setComments(state => [...state, newComment]);
     }
 
     return (

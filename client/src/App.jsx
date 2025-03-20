@@ -12,31 +12,31 @@ import { useState } from 'react'
 
 function App() {
 
-  const [email, setemail] = useState('');
+    const [email, setemail] = useState('');
 
-  const setEmailHandler = (email) => {
-    setemail(email);
-  }
+    const setEmailHandler = (email) => {
+        setemail(email);
+    }
 
-  return (
-    <div id="box">
-      <main id="main-content">
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/games' element={<Catalog />} />
-          <Route path='/games/:gameId/details' element={<DetailsGame email={email} />} />
-          <Route path='/games/:gameId/edit' element={<EditGame />} />
-          <Route path='/games/create' element={<CreateGame />} />
-          <Route path='/login' element={<Login onLogin={setEmailHandler} />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
+    return (
+        <div id="box">
+            <main id="main-content">
+                <Header />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/games' element={<Catalog />} />
+                    <Route path='/games/:gameId/details' element={<DetailsGame email={email} />} />
+                    <Route path='/games/:gameId/edit' element={<EditGame />} />
+                    <Route path='/games/create' element={<CreateGame />} />
+                    <Route path='/login' element={<Login onLogin={setEmailHandler} />} />
+                    <Route path='/register' element={<Register />} />
+                </Routes>
 
 
-      </main>
+            </main>
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default App

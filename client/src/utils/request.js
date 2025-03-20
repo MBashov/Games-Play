@@ -17,7 +17,7 @@ const request = async (method, url, data) => {
 }
 export default {
     get: (url) => request('GET', url),
-    post:  (url, data) => request('POST', url, data),
+    post: (url, data) => request('POST', url, data),
     put: (url, data) => request('PUT', url, data),
     del: (url) => request('DELETE', url),
 }
