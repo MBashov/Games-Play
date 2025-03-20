@@ -19,12 +19,21 @@ export const useLogin = () => {
     }
 
     useEffect(() => {
-        const abortController = abortRef.current;  
+        const abortController = abortRef.current;
 
         return () => abortController.abort();
     }, []);
 
     return {
         login,
+    }
+}
+
+export const useRegister = () => {
+    const register = async (email, password) =>
+        await request.post(`${baseUrl}/register`, { email, password });
+
+    return {
+        register,
     }
 }
