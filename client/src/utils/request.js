@@ -15,14 +15,14 @@ const request = async (method, url, data, options = {}) => {
             body: JSON.stringify(data),
         }
     }
-    
+
     const responce = await fetch(url, options);
     if (responce.status === 204) {
         return
     }
-    
-    const result = await responce.json();
 
+    const result = await responce.json();
+    
     return result;
 }
 export default {
