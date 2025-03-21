@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import gameService from "../../services/gameService";
 import Game from "./game/Game";
 import { useGames } from "../api/gameApi";
 

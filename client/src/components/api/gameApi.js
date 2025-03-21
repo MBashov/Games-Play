@@ -5,17 +5,6 @@ import useAuth from "../../hooks/useAuth";
 
 const baseUrl = 'http://localhost:3030/data/games';
 
-// export default {
-
-//     edit(gameId, gameData) {
-//         return request.put(`${baseUrl}/${gameId}`, { ...gameData, _id: gameId });
-//     },
-
-//     delete(gameId) {
-//         return request.del(`${baseUrl}/${gameId}`);
-//     }
-// }
-
 export const useGames = () => {
     const [games, setGames] = useState([]);
 
@@ -47,7 +36,8 @@ export const useCreateGame = () => {
 
     const { request } = useAuth();
 
-    const create = (gameData) => request.post(baseUrl, gameData);
+    const create = (gameData) =>
+        request.post(baseUrl, gameData);
 
     return {
         create,
@@ -56,6 +46,24 @@ export const useCreateGame = () => {
 
 export const useEditGame = () => {
 
- 
+    const { request } = useAuth();
+
+    const edit = (gameId, gameData) =>
+        request.put(`${baseUrl}/${gameId}`, { ...gameData, _id: gameId });
+
+    return {
+        edit,
+    }
+}
+
+export const useDeleteGame = () => {
+    const { request } = useAuth();
+
+    const deleteGame = (gameId) =>
+        request.del(`${baseUrl}/${gameId}`);
+
+    return {
+        deleteGame
+    };
 }
 
