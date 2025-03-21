@@ -9,7 +9,7 @@ import useAuth from "../../hooks/useAuth";
 export default function DetailsGame() {
 
     const navigate = useNavigate();
-    const { email } = useAuth();
+    const { email, _id: userId } = useAuth();
     const [comments, setComments] = useState([]);
     const { gameId } = useParams();
     const { game } = useGame(gameId);
@@ -22,11 +22,17 @@ export default function DetailsGame() {
 
     // }, [gameId]);
 
+    console.log(userId);
+    console.log(game._ownerId);
+
+    const isOwner = userId === game._ownerId;
+
+
     const deleteGameHandler = async () => {
         const confirm = window.confirm(`Are you sure you want to delete ${game.title}`);
 
         if (!confirm) return;
- 
+
         await deleteGame(gameId);
 
         navigate('/games');
@@ -55,11 +61,12 @@ export default function DetailsGame() {
 
                 {<ShowComments comments={comments} />}
 
-                {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
-                <div className="buttons">
-                    <Link to={`/games/${game._id}/edit`} className="button">Edit</Link>
-                    <button onClick={deleteGameHandler} className="button">Delete</button>
-                </div>
+                {isOwner &&
+                    <div className="buttons">
+                        <Link to={`/games/${game._id}/edit`} className="button">Edit</Link>
+                        <button onClick={deleteGameHandler} className="button">Delete</button>
+                    </div>
+                }
             </div>
 
             {<CreateComments
