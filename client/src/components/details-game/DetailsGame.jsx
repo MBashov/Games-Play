@@ -7,24 +7,22 @@ import gameService from "../../services/gameService";
 import ShowComments from "../show-comments/ShowComments";
 import CreateComments from "../create-comments/CreateComments";
 import commentService from "../../services/commentService";
+import { useGame } from "../api/gameApi";
 
 export default function DetailsGame() {
 
     const navigate = useNavigate();
     const { email } = useContext(userContext);
-    const { gameId } = useParams();
-    const [game, setGame] = useState({});
     const [comments, setComments] = useState([]);
+    const { gameId } = useParams();
+    const { game } = useGame(gameId);
 
-    useEffect(() => {
-        gameService.getOne(gameId)
-            .then(result => setGame(result));
-
-        commentService.getAll(gameId)
-            .then(result => setComments(result));
+    // useEffect(() => {
+    //     commentService.getAll(gameId)
+    //         .then(result => setComments(result));
 
 
-    }, [gameId]);
+    // }, [gameId]);
 
     const deleteGameHandler = async () => {
         const confirm = window.confirm(`Are you sure you want to delete ${game.title}`);
