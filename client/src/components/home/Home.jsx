@@ -5,8 +5,6 @@ import Game from "../catalog/game/Game";
 export default function Home() {
 
     const { latestGames } = useLatestGames();
-    console.log(latestGames);
-    
 
     return (
         <section id="welcome-world">

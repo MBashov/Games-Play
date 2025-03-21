@@ -5,7 +5,6 @@ import { useGames } from "../api/gameApi";
 export default function Catalog() {
 
     const { games } = useGames();
-    console.log(games);
     
     return (
         <section id="catalog-page">
