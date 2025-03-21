@@ -1669,7 +1669,27 @@
                 "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a5/DF1-game.JPG",
                 "summary": "Delta Force is a tactical first-person shooter developed and published by NovaLogic. It was released for the Windows in October 1998. Delta Force was designed to be a military simulation loosely based on the United States' Delta Force special operations army unit.",
                 "_createdOn": 1742577136252,
-                "_id": "275502f4-322f-4621-8fae-e41108455741"
+                "_id": "275502f4-322f-4621-8fae-e41108455741"   
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "Call of Duty 2",
+                "category": "War",
+                "maxLevel": "24",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d1/Call_of_Duty_2_Box.jpg",
+                "summary": "The game is set during World War II and the campaign mode is experienced through the perspectives of four soldiers: one in the Red Army, one in the United States Army, and two in the British Army. It contains four individual campaigns, split into three stories, with a total of 27 missions. ",
+                "_createdOn": 1742577957751,
+                "_id": "b1e851bd-0d3b-4a00-842d-d34615f474e4"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "Need for Speed: Most Wanted ",
+                "category": "Racing",
+                "maxLevel": "23",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/8e/Need_for_Speed_Most_Wanted_Box_Art.jpg",
+                "summary": "A lone street racer must use his talents to rise to the top of the Blacklist, comprised of the 15 most elite drivers in the city of Rockport.\nThe city of Rockport's league of illegal street racers is dominated by the Blacklist, a highly skilled group comprised of the 15 best drivers in the city. A new arrival to the Rockport racing scene loses his car in a rigged race with Razor, #15 on the Blacklist. After a close call with Sergeant Cross of the Rockport Police Department, the challenger must fight his way through the ranks of the Blacklist to reach Razor, who has since used the challenger's original car to reach the top of the Blacklist.",
+                "_createdOn": 1742577821495,
+                "_id": "73ae6f07-a9a9-4d49-b590-01856a82d1f4"
             },
         ]
     };
