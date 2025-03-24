@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import Game from "./game/Game";
-import { useGames } from "../api/gameApi";
+import { useGames } from "../../api/gameApi";
 
 export default function Catalog() {
 

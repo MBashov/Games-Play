@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 
-import { userContext } from "../../contexts/userContext";
-import request from "../../utils/request";
+import { userContext } from "../contexts/userContext";
+import request from "../utils/request";
 
 const baseUrl = 'http://localhost:3030/users';
 

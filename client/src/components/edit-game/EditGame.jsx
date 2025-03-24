@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router";
-import { useEditGame, useGame } from "../api/gameApi";
+import { useEditGame, useGame } from "../../api/gameApi";
 
 export default function EditGame() {
     

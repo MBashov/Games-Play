@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import request from "../../utils/request";
-import useAuth from "../../hooks/useAuth";
+import request from "../utils/request";
+import useAuth from "../hooks/useAuth";
 
 const baseUrl = 'http://localhost:3030/data/games';
 

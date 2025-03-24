@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
+import { useCreateGame } from '../../api/gameApi';
 
-import { useCreateGame } from '../api/gameApi.js';
 
 export default function CreateGame() {
 

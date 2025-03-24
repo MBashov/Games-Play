@@ -1,6 +1,5 @@
 import { Link } from "react-router";
-import { useLatestGames } from "../api/gameApi";
-import Game from "../catalog/game/Game";
+import { useLatestGames } from "../../api/gameApi";
 
 export default function Home() {
 

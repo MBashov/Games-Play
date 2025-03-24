@@ -3,8 +3,8 @@ import { Link, useParams, useNavigate } from "react-router";
 import ShowComments from "../show-comments/ShowComments";
 import CreateComments from "../create-comments/CreateComments";
 import useAuth from "../../hooks/useAuth";
-import { useDeleteGame, useGame } from "../api/gameApi";
-import { useComments } from "../api/commentApi";
+import { useComments } from "../../api/commentApi";
+import { useDeleteGame, useGame } from "../../api/gameApi";
 
 export default function DetailsGame() {
 
