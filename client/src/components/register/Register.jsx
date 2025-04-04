@@ -1,6 +1,8 @@
-import { use, useActionState, useContext } from "react";
-import { userContext } from "../../contexts/userContext";
+import { useActionState, useContext } from "react";
 import { useNavigate } from "react-router";
+import { toast } from 'react-toastify';
+
+import { userContext } from "../../contexts/userContext";
 import { useRegister } from "../../api/authApi";
 
 export default function Register() {
@@ -13,14 +15,15 @@ export default function Register() {
         const { email, password, rePassword } = Object.fromEntries(formData);
 
         if (password !== rePassword) {
-            return console.log('Wrong password'); //TODO Add error handler  
+            return toast.error('Passwords don\'t match');
         }
-
-        const authData = await register(email, password);
-
-        userLoginHandler(authData);
-
-        navigate('/');
+        try {
+            const authData = await register(email, password);
+            userLoginHandler(authData);
+            navigate('/');
+        } catch (err) {
+            toast.error(err.message);
+        }
     }
 
 

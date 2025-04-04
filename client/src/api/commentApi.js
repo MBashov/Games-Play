@@ -15,8 +15,8 @@ export const useComments = (gameId) => {
 
         request.get(`${baseUrl}?${searchParams.toString()}`)
             .then(setComments)
-    }, [gameId]);
-    
+    }, [gameId, request]);
+
 
     return {
         comments,

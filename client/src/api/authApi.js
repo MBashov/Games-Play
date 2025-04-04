@@ -53,7 +53,7 @@ export const useLogout = () => {
         request.get(`${baseUrl}/logout`, null, options)
             .then(userLogoutHandler())
 
-    }, []);
+    }, [accessToken, userLogoutHandler]);
 
     return {
         isLoggedOut: !!accessToken

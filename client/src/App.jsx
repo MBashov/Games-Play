@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router'
+import { ToastContainer } from "react-toastify";
 
 import { userContext } from './contexts/userContext'
 
@@ -41,6 +42,7 @@ function App() {
                         <Route path='/logout' element={<Logout />} />
                     </Routes>
                 </main>
+                <ToastContainer position="top-center" autoClose={2000} />
             </div>
         </userContext.Provider>
     )

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 
 import { userContext } from "../../contexts/userContext";
 import { useLogin } from "../../api/authApi";
+import { toast } from "react-toastify";
 
 export default function Login() {
 
@@ -13,11 +14,14 @@ export default function Login() {
     const loginHandler = async (_, formData) => {
         const { email, password } = Object.fromEntries(formData);
 
-        const authData = await login(email, password);
+        try {
+            const authData = await login(email, password);
+            userLoginHandler(authData);
+            navigate('/games');
+        } catch (err) {
+            toast.error(err.message);
+        }
 
-        userLoginHandler(authData);
-
-        navigate('/games');
     }
 
     const [_, formAction, isPending] = useActionState(loginHandler, { email: '', password: '' })
